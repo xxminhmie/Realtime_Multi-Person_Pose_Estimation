@@ -19,6 +19,8 @@ from caffe import params as P  # pseudo module using __getattr__ magic to genera
 def setLayers_twoBranches(data_source, batch_size, layername, kernel, stride, outCH, label_name, transform_param_in, deploy=False, batchnorm=0, lr_mult_distro=[1,1,1]):
     # it is tricky to produce the deploy prototxt file, as the data input is not from a layer, so we have to creat a workaround
     # producing training and testing prototxt files is pretty straight forward
+    
+    # xxmm - Create train net.
     n = caffe.NetSpec()
     assert len(layername) == len(kernel)
     assert len(layername) == len(stride)
